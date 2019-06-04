@@ -1,0 +1,235 @@
+current directory: /Users/takagitoshiki/profy/vendor/bundle/gems/mini_racer-0.2.4/ext/mini_racer_extension
+/Users/takagitoshiki/.rbenv/versions/2.5.3/bin/ruby -r ./siteconf20190425-9920-12lmdu6.rb extconf.rb
+checking for -lpthread... yes
+checking for -lobjc... yes
+creating Makefile
+
+current directory: /Users/takagitoshiki/profy/vendor/bundle/gems/mini_racer-0.2.4/ext/mini_racer_extension
+make "DESTDIR=" clean
+
+current directory: /Users/takagitoshiki/profy/vendor/bundle/gems/mini_racer-0.2.4/ext/mini_racer_extension
+make "DESTDIR="
+compiling mini_racer_extension.cc
+clang: warning: argument unused during compilation: '-rdynamic' [-Wunused-command-line-argument]
+In file included from mini_racer_extension.cc:2:
+In file included from /Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby.h:33:
+In file included from /Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/ruby.h:2040:
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/intern.h:47:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/intern.h:47:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+mini_racer_extension.cc:234:64: error: no matching member function for call to 'ToObject'
+                        String::NewFromUtf8(isolate, "JSON"))->ToObject();
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2390:44: note: candidate function not viable: requires single argument 'context', but no arguments were provided
+  V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                           ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2404:35: note: candidate function not viable: requires single argument 'isolate', but no arguments were provided
+                    Local<Object> ToObject(Isolate* isolate) const);
+                                  ^
+mini_racer_extension.cc:239:49: error: no matching member function for call to 'ToObject'
+            Local<Object> object = local_value->ToObject();
+                                   ~~~~~~~~~~~~~^~~~~~~~
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2390:44: note: candidate function not viable: requires single argument 'context', but no arguments were provided
+  V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                           ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2404:35: note: candidate function not viable: requires single argument 'isolate', but no arguments were provided
+                    Local<Object> ToObject(Isolate* isolate) const);
+                                  ^
+mini_racer_extension.cc:267:69: error: no matching conversion for functional-style cast from 'Local<v8::String>' to 'String::Utf8Value'
+                len = snprintf(buf, sizeof(buf), "%s at %s:%i:%i", *String::Utf8Value(message->Get()),
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2864:5: note: candidate constructor not viable: no known conversion from 'Local<v8::String>' to 'const v8::String::Utf8Value' for 1st argument
+    Utf8Value(const Utf8Value&) = delete;
+    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2857:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+    Utf8Value(Isolate* isolate, Local<v8::Value> obj);
+    ^
+mini_racer_extension.cc:268:85: error: no matching member function for call to 'ToString'
+                               *String::Utf8Value(message->GetScriptResourceName()->ToString()),
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2386:44: note: candidate function not viable: requires single argument 'context', but no arguments were provided
+  V8_WARN_UNUSED_RESULT MaybeLocal<String> ToString(
+                                           ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2402:35: note: candidate function not viable: requires single argument 'isolate', but no arguments were provided
+                    Local<String> ToString(Isolate* isolate) const);
+                                  ^
+mini_racer_extension.cc:269:55: error: too few arguments to function call, single argument 'context' was not specified
+                               message->GetLineNumber(),
+                               ~~~~~~~~~~~~~~~~~~~~~~ ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:1623:3: note: 'GetLineNumber' declared here
+  V8_WARN_UNUSED_RESULT Maybe<int> GetLineNumber(Local<Context> context) const;
+  ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8config.h:347:31: note: expanded from macro 'V8_WARN_UNUSED_RESULT'
+#define V8_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
+                              ^
+mini_racer_extension.cc:284:38: error: too few arguments to function call, single argument 'context' was not specified
+            if (!trycatch.StackTrace().IsEmpty()) {
+                 ~~~~~~~~~~~~~~~~~~~ ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:8890:3: note: 'StackTrace' declared here
+  V8_WARN_UNUSED_RESULT MaybeLocal<Value> StackTrace(
+  ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8config.h:347:31: note: expanded from macro 'V8_WARN_UNUSED_RESULT'
+#define V8_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
+                              ^
+mini_racer_extension.cc:286:71: error: too few arguments to function call, single argument 'context' was not specified
+                evalRes.backtrace->Reset(isolate, trycatch.StackTrace()->ToString());
+                                                  ~~~~~~~~~~~~~~~~~~~ ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:8890:3: note: 'StackTrace' declared here
+  V8_WARN_UNUSED_RESULT MaybeLocal<Value> StackTrace(
+  ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8config.h:347:31: note: expanded from macro 'V8_WARN_UNUSED_RESULT'
+#define V8_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
+                              ^
+mini_racer_extension.cc:366:39: error: too few arguments to function call, single argument 'context' was not specified
+     return INT2FIX(value->Int32Value());
+                    ~~~~~~~~~~~~~~~~~ ^
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/ruby.h:234:31: note: expanded from macro 'INT2FIX'
+#define INT2FIX(i) RB_INT2FIX(i)
+                              ^
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/ruby.h:233:33: note: expanded from macro 'RB_INT2FIX'
+#define RB_INT2FIX(i) (((VALUE)(i))<<1 | RUBY_FIXNUM_FLAG)
+                                ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2427:3: note: 'Int32Value' declared here
+  V8_WARN_UNUSED_RESULT Maybe<int32_t> Int32Value(Local<Context> context) const;
+  ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8config.h:347:31: note: expanded from macro 'V8_WARN_UNUSED_RESULT'
+#define V8_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
+                              ^
+mini_racer_extension.cc:370:46: error: too few arguments to function call, single argument 'context' was not specified
+      return rb_float_new(value->NumberValue());
+                          ~~~~~~~~~~~~~~~~~~ ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2422:3: note: 'NumberValue' declared here
+  V8_WARN_UNUSED_RESULT Maybe<double> NumberValue(Local<Context> context) const;
+  ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8config.h:347:31: note: expanded from macro 'V8_WARN_UNUSED_RESULT'
+#define V8_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
+                              ^
+mini_racer_extension.cc:411:32: error: no matching member function for call to 'ToObject'
+        Local<Object> object = value->ToObject();
+                               ~~~~~~~^~~~~~~~
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2390:44: note: candidate function not viable: requires single argument 'context', but no arguments were provided
+  V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                           ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2404:35: note: candidate function not viable: requires single argument 'isolate', but no arguments were provided
+                    Local<Object> ToObject(Isolate* isolate) const);
+                                  ^
+mini_racer_extension.cc:434:33: error: no matching member function for call to 'ToString'
+    Local<String> rstr = value->ToString();
+                         ~~~~~~~^~~~~~~~
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2386:44: note: candidate function not viable: requires single argument 'context', but no arguments were provided
+  V8_WARN_UNUSED_RESULT MaybeLocal<String> ToString(
+                                           ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2402:35: note: candidate function not viable: requires single argument 'isolate', but no arguments were provided
+                    Local<String> ToString(Isolate* isolate) const);
+                                  ^
+mini_racer_extension.cc:435:28: error: no matching conversion for functional-style cast from 'Local<v8::String>' to 'String::Utf8Value'
+    return rb_enc_str_new(*String::Utf8Value(rstr), rstr->Utf8Length(), rb_enc_find("utf-8"));
+                           ^~~~~~~~~~~~~~~~~~~~~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/encoding.h:151:27: note: expanded from macro 'rb_enc_str_new'
+    (__builtin_constant_p(str) && __builtin_constant_p(len)) ? \
+                          ^~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/defines.h:105:53: note: expanded from macro 'RB_GNUC_EXTENSION_BLOCK'
+#define RB_GNUC_EXTENSION_BLOCK(x) __extension__ ({ x; })
+                                                    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2864:5: note: candidate constructor not viable: no known conversion from 'Local<v8::String>' to 'const v8::String::Utf8Value' for 1st argument
+    Utf8Value(const Utf8Value&) = delete;
+    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2857:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+    Utf8Value(Isolate* isolate, Local<v8::Value> obj);
+    ^
+mini_racer_extension.cc:435:70: error: too few arguments to function call, single argument 'isolate' was not specified
+    return rb_enc_str_new(*String::Utf8Value(rstr), rstr->Utf8Length(), rb_enc_find("utf-8"));
+                                                    ~~~~~~~~~~~~~~~~ ^
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/encoding.h:151:56: note: expanded from macro 'rb_enc_str_new'
+    (__builtin_constant_p(str) && __builtin_constant_p(len)) ? \
+                                                       ^~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/defines.h:105:53: note: expanded from macro 'RB_GNUC_EXTENSION_BLOCK'
+#define RB_GNUC_EXTENSION_BLOCK(x) __extension__ ({ x; })
+                                                    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2536:3: note: 'Utf8Length' declared here
+  int Utf8Length(Isolate* isolate) const;
+  ^
+mini_racer_extension.cc:435:28: error: no matching conversion for functional-style cast from 'Local<v8::String>' to 'String::Utf8Value'
+    return rb_enc_str_new(*String::Utf8Value(rstr), rstr->Utf8Length(), rb_enc_find("utf-8"));
+                           ^~~~~~~~~~~~~~~~~~~~~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/encoding.h:152:25: note: expanded from macro 'rb_enc_str_new'
+        rb_enc_str_new_static((str), (len), (enc)) : \
+                               ^~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/defines.h:105:53: note: expanded from macro 'RB_GNUC_EXTENSION_BLOCK'
+#define RB_GNUC_EXTENSION_BLOCK(x) __extension__ ({ x; })
+                                                    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2864:5: note: candidate constructor not viable: no known conversion from 'Local<v8::String>' to 'const v8::String::Utf8Value' for 1st argument
+    Utf8Value(const Utf8Value&) = delete;
+    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2857:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+    Utf8Value(Isolate* isolate, Local<v8::Value> obj);
+    ^
+mini_racer_extension.cc:435:70: error: too few arguments to function call, single argument 'isolate' was not specified
+    return rb_enc_str_new(*String::Utf8Value(rstr), rstr->Utf8Length(), rb_enc_find("utf-8"));
+                                                    ~~~~~~~~~~~~~~~~ ^
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/encoding.h:152:32: note: expanded from macro 'rb_enc_str_new'
+        rb_enc_str_new_static((str), (len), (enc)) : \
+                                      ^~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/defines.h:105:53: note: expanded from macro 'RB_GNUC_EXTENSION_BLOCK'
+#define RB_GNUC_EXTENSION_BLOCK(x) __extension__ ({ x; })
+                                                    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2536:3: note: 'Utf8Length' declared here
+  int Utf8Length(Isolate* isolate) const;
+  ^
+mini_racer_extension.cc:435:28: error: no matching conversion for functional-style cast from 'Local<v8::String>' to 'String::Utf8Value'
+    return rb_enc_str_new(*String::Utf8Value(rstr), rstr->Utf8Length(), rb_enc_find("utf-8"));
+                           ^~~~~~~~~~~~~~~~~~~~~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/encoding.h:153:18: note: expanded from macro 'rb_enc_str_new'
+        rb_enc_str_new((str), (len), (enc)) \
+                        ^~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/defines.h:105:53: note: expanded from macro 'RB_GNUC_EXTENSION_BLOCK'
+#define RB_GNUC_EXTENSION_BLOCK(x) __extension__ ({ x; })
+                                                    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2864:5: note: candidate constructor not viable: no known conversion from 'Local<v8::String>' to 'const v8::String::Utf8Value' for 1st argument
+    Utf8Value(const Utf8Value&) = delete;
+    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2857:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+    Utf8Value(Isolate* isolate, Local<v8::Value> obj);
+    ^
+mini_racer_extension.cc:435:70: error: too few arguments to function call, single argument 'isolate' was not specified
+    return rb_enc_str_new(*String::Utf8Value(rstr), rstr->Utf8Length(), rb_enc_find("utf-8"));
+                                                    ~~~~~~~~~~~~~~~~ ^
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/encoding.h:153:25: note: expanded from macro 'rb_enc_str_new'
+        rb_enc_str_new((str), (len), (enc)) \
+                               ^~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/defines.h:105:53: note: expanded from macro 'RB_GNUC_EXTENSION_BLOCK'
+#define RB_GNUC_EXTENSION_BLOCK(x) __extension__ ({ x; })
+                                                    ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:2536:3: note: 'Utf8Length' declared here
+  int Utf8Length(Isolate* isolate) const;
+  ^
+mini_racer_extension.cc:435:12: error: cannot initialize return object of type 'VALUE' (aka 'unsigned long') with an rvalue of type 'void'
+    return rb_enc_str_new(*String::Utf8Value(rstr), rstr->Utf8Length(), rb_enc_find("utf-8"));
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/encoding.h:150:39: note: expanded from macro 'rb_enc_str_new'
+#define rb_enc_str_new(str, len, enc) RB_GNUC_EXTENSION_BLOCK( \
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/takagitoshiki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/defines.h:105:36: note: expanded from macro 'RB_GNUC_EXTENSION_BLOCK'
+#define RB_GNUC_EXTENSION_BLOCK(x) __extension__ ({ x; })
+                                   ^~~~~~~~~~~~~~~~~~~~~~
+mini_racer_extension.cc:515:43: error: no viable conversion from 'v8::Isolate *' to 'Local<v8::Context>'
+            return scope.Escape(Date::New(isolate, NUM2DBL(value) * 1000));
+                                          ^~~~~~~
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:178:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'v8::Isolate *' to 'const v8::Local<v8::Context> &' for 1st argument
+class Local {
+      ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:178:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'v8::Isolate *' to 'v8::Local<v8::Context> &&' for 1st argument
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:182:13: note: candidate template ignored: could not match 'Local<type-parameter-0-0>' against 'v8::Isolate *'
+  V8_INLINE Local(Local<S> that)
+            ^
+/Users/takagitoshiki/profy/vendor/bundle/gems/libv8-7.3.492.27.1-x86_64-darwin-18/vendor/v8/include/v8.h:5185:69: note: passing argument to parameter 'context' here
+  static V8_WARN_UNUSED_RESULT MaybeLocal<Value> New(Local<Context> context,
+                                                                    ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+2 warnings and 20 errors generated.
+make: *** [mini_racer_extension.o] Error 1
+
+make failed, exit code 2
